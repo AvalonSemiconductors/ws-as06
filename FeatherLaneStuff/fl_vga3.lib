@@ -1,0 +1,120 @@
+library (fl_vga3) {
+  input_threshold_pct_fall: 50.0;
+  input_threshold_pct_rise: 50.0;
+  output_threshold_pct_fall: 50.0;
+  output_threshold_pct_rise: 50.0;
+  slew_lower_threshold_pct_fall: 20.0;
+  slew_lower_threshold_pct_rise: 20.0;
+  slew_upper_threshold_pct_fall: 80.0;
+  slew_upper_threshold_pct_rise: 80.0;
+  nom_process: 1.0;
+  nom_temperature: 25.0;
+  nom_voltage: 3.3;
+  
+  type("rgb") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 24;
+    bit_from : 23;
+    bit_to : 0;
+  }
+  
+  cell (fl_vga3) {
+    pin("clk") {
+      direction : input;
+      clock : true;
+    }
+    pin("clk_n") {
+      direction : input;
+      clock : true;
+    }
+    pin("io_in") {
+      direction : input;
+    }
+    pin("rst_override_n") {
+      direction : input;
+    }
+    pin("hsync") {
+      direction : output;
+    }
+    pin("vsync") {
+      direction : output;
+    }
+    bus("rgb") {
+      bus_type : rgb;
+      direction : output;
+      pin("rgb[0]") {
+        direction : output;
+      }
+      pin("rgb[1]") {
+        direction : output;
+      }
+      pin("rgb[2]") {
+        direction : output;
+      }
+      pin("rgb[3]") {
+        direction : output;
+      }
+      pin("rgb[4]") {
+        direction : output;
+      }
+      pin("rgb[5]") {
+        direction : output;
+      }
+      pin("rgb[6]") {
+        direction : output;
+      }
+      pin("rgb[7]") {
+        direction : output;
+      }
+      pin("rgb[8]") {
+        direction : output;
+      }
+      pin("rgb[9]") {
+        direction : output;
+      }
+      pin("rgb[10]") {
+        direction : output;
+      }
+      pin("rgb[11]") {
+        direction : output;
+      }
+      pin("rgb[12]") {
+        direction : output;
+      }
+      pin("rgb[13]") {
+        direction : output;
+      }
+      pin("rgb[14]") {
+        direction : output;
+      }
+      pin("rgb[15]") {
+        direction : output;
+      }
+      pin("rgb[16]") {
+        direction : output;
+      }
+      pin("rgb[17]") {
+        direction : output;
+      }
+      pin("rgb[18]") {
+        direction : output;
+      }
+      pin("rgb[19]") {
+        direction : output;
+      }
+      pin("rgb[20]") {
+        direction : output;
+      }
+      pin("rgb[21]") {
+        direction : output;
+      }
+      pin("rgb[22]") {
+        direction : output;
+      }
+      pin("rgb[23]") {
+        direction : output;
+      }
+    }
+  }
+}

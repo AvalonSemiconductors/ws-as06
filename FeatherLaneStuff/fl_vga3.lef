@@ -1,0 +1,326 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO fl_vga3
+  CLASS BLOCK ;
+  FOREIGN fl_vga3 ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 338.800 BY 277.200 ;
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal4 ;
+        RECT 85.540 1.400 86.940 275.800 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 203.700 1.400 205.100 275.800 ;
+    END
+  END VSS
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal4 ;
+        RECT 88.900 1.400 90.300 275.800 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 207.060 1.400 208.460 275.800 ;
+    END
+  END VDD
+  PIN hsync
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 338.240 225.400 338.800 228.200 ;
+    END
+  END hsync
+  PIN rgb[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 211.120 0.000 211.680 0.560 ;
+    END
+  END rgb[1]
+  PIN rgb[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 63.840 0.000 64.400 0.560 ;
+    END
+  END rgb[2]
+  PIN rgb[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 241.360 0.000 241.920 0.560 ;
+    END
+  END rgb[3]
+  PIN rgb[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 154.560 0.000 155.120 0.560 ;
+    END
+  END rgb[4]
+  PIN rgb[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 228.480 0.000 229.040 0.560 ;
+    END
+  END rgb[5]
+  PIN rgb[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 243.600 0.000 244.160 0.560 ;
+    END
+  END rgb[6]
+  PIN rgb[14]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 142.800 276.640 143.360 277.200 ;
+    END
+  END rgb[14]
+  PIN rgb[13]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 123.200 0.000 123.760 0.560 ;
+    END
+  END rgb[13]
+  PIN rgb[21]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 338.240 264.600 338.800 267.400 ;
+    END
+  END rgb[21]
+  PIN rgb[12]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 132.160 276.640 132.720 277.200 ;
+    END
+  END rgb[12]
+  PIN rgb[11]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 45.920 276.640 46.480 277.200 ;
+    END
+  END rgb[11]
+  PIN rgb[10]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 59.360 276.640 59.920 277.200 ;
+    END
+  END rgb[10]
+  PIN rgb[9]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 33.040 0.000 33.600 0.560 ;
+    END
+  END rgb[9]
+  PIN rgb[23]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 338.240 131.320 338.800 134.120 ;
+    END
+  END rgb[23]
+  PIN rgb[22]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 338.240 229.320 338.800 232.120 ;
+    END
+  END rgb[22]
+  PIN rgb[20]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 338.240 64.680 338.800 67.480 ;
+    END
+  END rgb[20]
+  PIN rgb[19]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 0.000 76.440 0.560 79.240 ;
+    END
+  END rgb[19]
+  PIN rgb[18]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 0.000 190.120 0.560 192.920 ;
+    END
+  END rgb[18]
+  PIN rgb[17]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 0.000 115.640 0.560 118.440 ;
+    END
+  END rgb[17]
+  PIN rgb[16]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 171.920 276.640 172.480 277.200 ;
+    END
+  END rgb[16]
+  PIN rgb[15]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 209.440 276.640 210.000 277.200 ;
+    END
+  END rgb[15]
+  PIN rgb[8]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 0.000 201.880 0.560 204.680 ;
+    END
+  END rgb[8]
+  PIN rgb[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 338.240 88.200 338.800 91.000 ;
+    END
+  END rgb[7]
+  PIN rgb[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 140.560 276.640 141.120 277.200 ;
+    END
+  END rgb[0]
+  PIN vsync
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 8.338300 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 0.000 209.720 0.560 212.520 ;
+    END
+  END vsync
+  PIN io_in
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.999200 ;
+    ANTENNADIFFAREA 0.877000 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 26.320 276.640 26.880 277.200 ;
+    END
+  END io_in
+  PIN rst_override_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.999200 ;
+    ANTENNADIFFAREA 0.877000 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 0.000 205.800 0.560 208.600 ;
+    END
+  END rst_override_n
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 2.352000 ;
+    ANTENNADIFFAREA 0.877000 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 83.440 276.640 84.000 277.200 ;
+    END
+  END clk
+  PIN clk_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 2.352000 ;
+    ANTENNADIFFAREA 0.877000 ;
+    PORT
+      LAYER Metal4 ;
+        RECT 50.400 276.640 50.960 277.200 ;
+    END
+  END clk_n
+  OBS
+      LAYER Nwell ;
+        RECT 0.970 0.970 337.830 276.230 ;
+      LAYER Metal1 ;
+        RECT 1.400 1.100 337.400 276.100 ;
+      LAYER Metal2 ;
+        RECT 0.000 0.000 338.800 277.200 ;
+      LAYER Metal3 ;
+        RECT 0.000 0.000 338.800 277.200 ;
+      LAYER Metal4 ;
+        RECT 32.900 1.120 85.240 276.080 ;
+        RECT 87.240 1.120 88.600 276.080 ;
+        RECT 90.600 1.120 203.400 276.080 ;
+        RECT 205.400 1.120 206.760 276.080 ;
+        RECT 208.760 1.120 278.460 276.080 ;
+  END
+END fl_vga3
+END LIBRARY
+

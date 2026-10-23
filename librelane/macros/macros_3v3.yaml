@@ -1,0 +1,333 @@
+MACROS:
+  # required: will be replaced with actual content
+  gf180mcu_ws_ip__qrcode_id:
+    gds:
+      - dir::../ip/gf180mcu_ws_ip__qrcode_id/gds/gf180mcu_ws_ip__qrcode_id.gds
+    lef:
+      - dir::../ip/gf180mcu_ws_ip__qrcode_id/lef/gf180mcu_ws_ip__qrcode_id.lef
+    vh:
+      - dir::../ip/gf180mcu_ws_ip__qrcode_id/vh/gf180mcu_ws_ip__qrcode_id.v
+    lib:
+      "*":
+        - dir::../ip/gf180mcu_ws_ip__qrcode_id/lib/gf180mcu_ws_ip__qrcode_id.lib
+    instances:
+      qrcode_id:
+        location: [26, 26]
+        orientation: N
+
+  # required: will be replaced with actual content
+  gf180mcu_ws_ip__shuttle_id:
+    gds:
+      - dir::../ip/gf180mcu_ws_ip__shuttle_id/gds/gf180mcu_ws_ip__shuttle_id.gds
+    lef:
+      - dir::../ip/gf180mcu_ws_ip__shuttle_id/lef/gf180mcu_ws_ip__shuttle_id.lef
+    vh:
+      - dir::../ip/gf180mcu_ws_ip__shuttle_id/vh/gf180mcu_ws_ip__shuttle_id.v
+    lib:
+      "*":
+        - dir::../ip/gf180mcu_ws_ip__shuttle_id/lib/gf180mcu_ws_ip__shuttle_id.lib
+    instances:
+      shuttle_id:
+        location: [26, 175.6]
+        orientation: E
+
+  # required: will be replaced with actual content
+  gf180mcu_ws_ip__project_id:
+    gds:
+      - dir::../ip/gf180mcu_ws_ip__project_id/gds/gf180mcu_ws_ip__project_id.gds
+    lef:
+      - dir::../ip/gf180mcu_ws_ip__project_id/lef/gf180mcu_ws_ip__project_id.lef
+    vh:
+      - dir::../ip/gf180mcu_ws_ip__project_id/vh/gf180mcu_ws_ip__project_id.v
+    lib:
+      "*":
+        - dir::../ip/gf180mcu_ws_ip__project_id/lib/gf180mcu_ws_ip__project_id.lib
+    instances:
+      project_id:
+        location: [175.6, 26]
+        orientation: N
+
+  # required: top right corner marker
+  gf180mcu_ws_ip__marker:
+    gds:
+      - dir::../ip/gf180mcu_ws_ip__marker/gds/gf180mcu_ws_ip__marker.gds
+    lef:
+      - dir::../ip/gf180mcu_ws_ip__marker/lef/gf180mcu_ws_ip__marker.lef
+    vh:
+      - dir::../ip/gf180mcu_ws_ip__marker/vh/gf180mcu_ws_ip__marker.v
+    lib:
+      "*":
+        - dir::../ip/gf180mcu_ws_ip__marker/lib/gf180mcu_ws_ip__marker.lib
+    instances:
+      marker:
+        location: [3651, 4841]
+        orientation: N
+
+  gf180mcu_ws_ip__logo:
+    gds:
+      - dir::../ip/gf180mcu_ws_ip__logo/gds/gf180mcu_ws_ip__logo.gds
+    lef:
+      - dir::../ip/gf180mcu_ws_ip__logo/lef/gf180mcu_ws_ip__logo.lef
+    vh:
+      - dir::../ip/gf180mcu_ws_ip__logo/vh/gf180mcu_ws_ip__logo.v
+    lib:
+      "*":
+        - dir::../ip/gf180mcu_ws_ip__logo/lib/gf180mcu_ws_ip__logo.lib
+    instances:
+      wafer_space_logo:
+        location: [26, 4952.75]
+        orientation: N
+  deepai:
+    gds:
+      - dir::../art/deepai.gds
+    lef:
+      - dir::../art/deepai.lef
+    vh:
+      - dir::../art/deepai.v
+    lib:
+      "*":
+        - dir::../art/deepai.lib
+    instances:
+      deepai:
+        location: [3150, 4250]
+        orientation: N
+  avali:
+    gds:
+      - dir::../art/avali.gds
+    lef:
+      - dir::../art/avali.lef
+    vh:
+      - dir::../art/avali.v
+    lib:
+      "*":
+        - dir::../art/avali.lib
+    instances:
+      avali:
+        location: [550, 4200]
+        orientation: N
+  apad:
+    gds:
+      - dir::../macros/Analog/pad/gds/apad.gds
+    lef:
+      - dir::../macros/Analog/pad/lef/apad.lef
+    pnl:
+      - dir::../macros/Analog/pad/verilog/apad.v
+    nl:
+      - dir::../macros/Analog/pad/verilog/apad.v
+    lib:
+      "*":
+        - dir::../macros/Analog/pad/lib/apad.lib
+  fl_mcpu32:
+    gds:
+      - dir::../FeatherLaneStuff/fl_mcpu32.gds
+    lef:
+      - dir::../FeatherLaneStuff/fl_mcpu32.lef
+    vh:
+      - dir::../FeatherLaneStuff/fl_mcpu32.v
+    lib:
+      "*":
+        - dir::../FeatherLaneStuff/fl_mcpu32.lib
+    instances:
+      fl_mcpu32:
+        location: [550, 3200]
+        orientation: N
+  r2r_dac_buffered:
+    gds:
+      - dir::../macros/Analog/r2r_dac/gds/r2r_dac_buffered.gds
+    lef:
+      - dir::../macros/Analog/r2r_dac/lef/r2r_dac_buffered.lef
+    vh:
+      - dir::../macros/Analog/r2r_dac/verilog/r2r_dac_buffered.v
+    lib:
+      "*":
+        - dir::../macros/Analog/r2r_dac/lib/r2r_dac_buffered.lib
+    instances:
+      dac_0:
+        location: [550, 3070]
+        orientation: N
+      dac_1:
+        location: [550, 3000]
+        orientation: N
+      dac_2:
+        location: [550, 2930]
+        orientation: N
+      dac_3:
+        location: [550, 2860]
+        orientation: N
+  riscv:
+    gds:
+      - dir::../macros/RISCV/runs/latest/final/gds/riscv.gds
+    lef:
+      - dir::../macros/RISCV/runs/latest/final/lef/riscv.lef
+    pnl:
+      - dir::../macros/RISCV/runs/latest/final/pnl/riscv.pnl.v
+    nl:
+      - dir::../macros/RISCV/runs/latest/final/nl/riscv.nl.v
+    spef:
+      min_*: dir::../macros/RISCV/runs/latest/final/spef/min/riscv.min.spef
+      nom_*: dir::../macros/RISCV/runs/latest/final/spef/nom/riscv.nom.spef
+      max_*: dir::../macros/RISCV/runs/latest/final/spef/max/riscv.max.spef
+    lib:
+      max_ff_n40C_3v60: dir::../macros/RISCV/runs/latest/final/lib/max_ff_n40C_3v60/riscv__max_ff_n40C_3v60.lib
+      max_ss_125C_3v00: dir::../macros/RISCV/runs/latest/final/lib/max_ss_125C_3v00/riscv__max_ss_125C_3v00.lib
+      max_tt_025C_3v30: dir::../macros/RISCV/runs/latest/final/lib/max_tt_025C_3v30/riscv__max_tt_025C_3v30.lib
+      min_ff_n40C_3v60: dir::../macros/RISCV/runs/latest/final/lib/min_ff_n40C_3v60/riscv__min_ff_n40C_3v60.lib
+      min_ss_125C_3v00: dir::../macros/RISCV/runs/latest/final/lib/min_ss_125C_3v00/riscv__min_ss_125C_3v00.lib
+      min_tt_025C_3v30: dir::../macros/RISCV/runs/latest/final/lib/min_tt_025C_3v30/riscv__min_tt_025C_3v30.lib
+      nom_ff_n40C_3v60: dir::../macros/RISCV/runs/latest/final/lib/nom_ff_n40C_3v60/riscv__nom_ff_n40C_3v60.lib
+      nom_ss_125C_3v00: dir::../macros/RISCV/runs/latest/final/lib/nom_ss_125C_3v00/riscv__nom_ss_125C_3v00.lib
+      nom_tt_025C_3v30: dir::../macros/RISCV/runs/latest/final/lib/nom_tt_025C_3v30/riscv__nom_tt_025C_3v30.lib
+    instances:
+      riscv:
+        location: [550, 600]
+        orientation: N
+  vga:
+    gds:
+      - dir::../macros/VGA/runs/latest/final/gds/vga.gds
+    lef:
+      - dir::../macros/VGA/runs/latest/final/lef/vga.lef
+    pnl:
+      - dir::../macros/VGA/runs/latest/final/pnl/vga.pnl.v
+    nl:
+      - dir::../macros/VGA/runs/latest/final/nl/vga.nl.v
+    spef:
+      min_*: dir::../macros/VGA/runs/latest/final/spef/min/vga.min.spef
+      nom_*: dir::../macros/VGA/runs/latest/final/spef/nom/vga.nom.spef
+      max_*: dir::../macros/VGA/runs/latest/final/spef/max/vga.max.spef
+    lib:
+      max_ff_n40C_3v60: dir::../macros/VGA/runs/latest/final/lib/max_ff_n40C_3v60/vga__max_ff_n40C_3v60.lib
+      max_ss_125C_3v00: dir::../macros/VGA/runs/latest/final/lib/max_ss_125C_3v00/vga__max_ss_125C_3v00.lib
+      max_tt_025C_3v30: dir::../macros/VGA/runs/latest/final/lib/max_tt_025C_3v30/vga__max_tt_025C_3v30.lib
+      min_ff_n40C_3v60: dir::../macros/VGA/runs/latest/final/lib/min_ff_n40C_3v60/vga__min_ff_n40C_3v60.lib
+      min_ss_125C_3v00: dir::../macros/VGA/runs/latest/final/lib/min_ss_125C_3v00/vga__min_ss_125C_3v00.lib
+      min_tt_025C_3v30: dir::../macros/VGA/runs/latest/final/lib/min_tt_025C_3v30/vga__min_tt_025C_3v30.lib
+      nom_ff_n40C_3v60: dir::../macros/VGA/runs/latest/final/lib/nom_ff_n40C_3v60/vga__nom_ff_n40C_3v60.lib
+      nom_ss_125C_3v00: dir::../macros/VGA/runs/latest/final/lib/nom_ss_125C_3v00/vga__nom_ss_125C_3v00.lib
+      nom_tt_025C_3v30: dir::../macros/VGA/runs/latest/final/lib/nom_tt_025C_3v30/vga__nom_tt_025C_3v30.lib
+    instances:
+      vga:
+        location: [550, 1750]
+        orientation: N
+  as65x:
+    gds:
+      - dir::../macros/AS65x/runs/latest/final/gds/as65x.gds
+    lef:
+      - dir::../macros/AS65x/runs/latest/final/lef/as65x.lef
+    pnl:
+      - dir::../macros/AS65x/runs/latest/final/pnl/as65x.pnl.v
+    nl:
+      - dir::../macros/AS65x/runs/latest/final/nl/as65x.nl.v
+    spef:
+      min_*: dir::../macros/AS65x/runs/latest/final/spef/min/as65x.min.spef
+      nom_*: dir::../macros/AS65x/runs/latest/final/spef/nom/as65x.nom.spef
+      max_*: dir::../macros/AS65x/runs/latest/final/spef/max/as65x.max.spef
+    lib:
+      max_ff_n40C_3v60: dir::../macros/AS65x/runs/latest/final/lib/max_ff_n40C_3v60/as65x__max_ff_n40C_3v60.lib
+      max_ss_125C_3v00: dir::../macros/AS65x/runs/latest/final/lib/max_ss_125C_3v00/as65x__max_ss_125C_3v00.lib
+      max_tt_025C_3v30: dir::../macros/AS65x/runs/latest/final/lib/max_tt_025C_3v30/as65x__max_tt_025C_3v30.lib
+      min_ff_n40C_3v60: dir::../macros/AS65x/runs/latest/final/lib/min_ff_n40C_3v60/as65x__min_ff_n40C_3v60.lib
+      min_ss_125C_3v00: dir::../macros/AS65x/runs/latest/final/lib/min_ss_125C_3v00/as65x__min_ss_125C_3v00.lib
+      min_tt_025C_3v30: dir::../macros/AS65x/runs/latest/final/lib/min_tt_025C_3v30/as65x__min_tt_025C_3v30.lib
+      nom_ff_n40C_3v60: dir::../macros/AS65x/runs/latest/final/lib/nom_ff_n40C_3v60/as65x__nom_ff_n40C_3v60.lib
+      nom_ss_125C_3v00: dir::../macros/AS65x/runs/latest/final/lib/nom_ss_125C_3v00/as65x__nom_ss_125C_3v00.lib
+      nom_tt_025C_3v30: dir::../macros/AS65x/runs/latest/final/lib/nom_tt_025C_3v30/as65x__nom_tt_025C_3v30.lib
+    instances:
+      as65x:
+        location: [550, 3700]
+        orientation: N
+  usb:
+    gds:
+      - dir::../macros/USB/runs/latest/final/gds/usb.gds
+    lef:
+      - dir::../macros/USB/runs/latest/final/lef/usb.lef
+    pnl:
+      - dir::../macros/USB/runs/latest/final/pnl/usb.pnl.v
+    nl:
+      - dir::../macros/USB/runs/latest/final/nl/usb.nl.v
+    spef:
+      min_*: dir::../macros/USB/runs/latest/final/spef/min/usb.min.spef
+      nom_*: dir::../macros/USB/runs/latest/final/spef/nom/usb.nom.spef
+      max_*: dir::../macros/USB/runs/latest/final/spef/max/usb.max.spef
+    lib:
+      max_ff_n40C_3v60: dir::../macros/USB/runs/latest/final/lib/max_ff_n40C_3v60/usb__max_ff_n40C_3v60.lib
+      max_ss_125C_3v00: dir::../macros/USB/runs/latest/final/lib/max_ss_125C_3v00/usb__max_ss_125C_3v00.lib
+      max_tt_025C_3v30: dir::../macros/USB/runs/latest/final/lib/max_tt_025C_3v30/usb__max_tt_025C_3v30.lib
+      min_ff_n40C_3v60: dir::../macros/USB/runs/latest/final/lib/min_ff_n40C_3v60/usb__min_ff_n40C_3v60.lib
+      min_ss_125C_3v00: dir::../macros/USB/runs/latest/final/lib/min_ss_125C_3v00/usb__min_ss_125C_3v00.lib
+      min_tt_025C_3v30: dir::../macros/USB/runs/latest/final/lib/min_tt_025C_3v30/usb__min_tt_025C_3v30.lib
+      nom_ff_n40C_3v60: dir::../macros/USB/runs/latest/final/lib/nom_ff_n40C_3v60/usb__nom_ff_n40C_3v60.lib
+      nom_ss_125C_3v00: dir::../macros/USB/runs/latest/final/lib/nom_ss_125C_3v00/usb__nom_ss_125C_3v00.lib
+      nom_tt_025C_3v30: dir::../macros/USB/runs/latest/final/lib/nom_tt_025C_3v30/usb__nom_tt_025C_3v30.lib
+    instances:
+      usb:
+        location: [1050, 4200]
+        orientation: N
+  fl_vga3:
+    gds:
+      - dir::../FeatherLaneStuff/fl_vga3.gds
+    lef:
+      - dir::../FeatherLaneStuff/fl_vga3.lef
+    vh:
+      - dir::../FeatherLaneStuff/fl_vga3.v
+    lib:
+      "*":
+        - dir::../FeatherLaneStuff/fl_vga3.lib
+    instances:
+      fl_vga3:
+        location: [1100, 3317]
+        orientation: N
+  wrapped_mcpu:
+    gds:
+      - dir::../macros/MCPU32/runs/latest/final/gds/wrapped_mcpu.gds
+    lef:
+      - dir::../macros/MCPU32/runs/latest/final/lef/wrapped_mcpu.lef
+    pnl:
+      - dir::../macros/MCPU32/runs/latest/final/pnl/wrapped_mcpu.pnl.v
+    nl:
+      - dir::../macros/MCPU32/runs/latest/final/nl/wrapped_mcpu.nl.v
+    spef:
+      min_*: dir::../macros/MCPU32/runs/latest/final/spef/min/wrapped_mcpu.min.spef
+      nom_*: dir::../macros/MCPU32/runs/latest/final/spef/nom/wrapped_mcpu.nom.spef
+      max_*: dir::../macros/MCPU32/runs/latest/final/spef/max/wrapped_mcpu.max.spef
+    lib:
+      max_ff_n40C_3v60: dir::../macros/MCPU32/runs/latest/final/lib/max_ff_n40C_3v60/wrapped_mcpu__max_ff_n40C_3v60.lib
+      max_ss_125C_3v00: dir::../macros/MCPU32/runs/latest/final/lib/max_ss_125C_3v00/wrapped_mcpu__max_ss_125C_3v00.lib
+      max_tt_025C_3v30: dir::../macros/MCPU32/runs/latest/final/lib/max_tt_025C_3v30/wrapped_mcpu__max_tt_025C_3v30.lib
+      min_ff_n40C_3v60: dir::../macros/MCPU32/runs/latest/final/lib/min_ff_n40C_3v60/wrapped_mcpu__min_ff_n40C_3v60.lib
+      min_ss_125C_3v00: dir::../macros/MCPU32/runs/latest/final/lib/min_ss_125C_3v00/wrapped_mcpu__min_ss_125C_3v00.lib
+      min_tt_025C_3v30: dir::../macros/MCPU32/runs/latest/final/lib/min_tt_025C_3v30/wrapped_mcpu__min_tt_025C_3v30.lib
+      nom_ff_n40C_3v60: dir::../macros/MCPU32/runs/latest/final/lib/nom_ff_n40C_3v60/wrapped_mcpu__nom_ff_n40C_3v60.lib
+      nom_ss_125C_3v00: dir::../macros/MCPU32/runs/latest/final/lib/nom_ss_125C_3v00/wrapped_mcpu__nom_ss_125C_3v00.lib
+      nom_tt_025C_3v30: dir::../macros/MCPU32/runs/latest/final/lib/nom_tt_025C_3v30/wrapped_mcpu__nom_tt_025C_3v30.lib
+    instances:
+      wrapped_mcpu:
+        location: [1600, 4200]
+        orientation: N
+  td:
+    gds:
+      - dir::../art/td.gds
+    lef:
+      - dir::../art/td.lef
+    vh:
+      - dir::../art/td.v
+    lib:
+      "*":
+        - dir::../art/td.lib
+    instances:
+      td:
+        location: [852, 4200]
+        orientation: N
+  fl_rv32i:
+    gds:
+      - dir::../FeatherLaneStuff/fl_rv32i.gds
+    lef:
+      - dir::../FeatherLaneStuff/fl_rv32i.lef
+    vh:
+      - dir::../FeatherLaneStuff/fl_rv32i.v
+    lib:
+      "*":
+        - dir::../FeatherLaneStuff/fl_rv32i.lib
+    instances:
+      fl_rv32i:
+        location: [1800, 2800]
+        orientation: N

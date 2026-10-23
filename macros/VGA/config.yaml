@@ -1,0 +1,57 @@
+meta:
+  version: 3
+  flow: Classic
+  substituting_steps:
+    +Magic.DRC: KLayout.Antenna
+    +Checker.MagicDRC: Checker.KLayoutAntenna
+
+DESIGN_NAME: vga
+VERILOG_FILES: ["dir::src/vga.v", "dir::src/vga_demo.v", "dir::src/blinker.v", "dir::src/ch_0.v", "dir::src/ch_1.v", "dir::src/ch_2.v", "dir::src/ch_3.v",
+"dir::src/external/tt-waferspace-vga-screensaver/src/tt_um_waferspace_vga_screensaver.v", "dir::src/external/tt-waferspace-vga-screensaver/src/bitmap_rom.v", "dir::src/external/tt-waferspace-vga-screensaver/src/gamepad_pmod.v", "dir::src/external/tt-waferspace-vga-screensaver/src/palette.v", "dir::src/external/tt-waferspace-vga-screensaver/src/vga_sync_generator.v",
+"dir::src/external/tt26-demo-4tile/src/project_pl.v", "dir::src/external/tt26-demo-4tile/src/vga_pl_tracer.sv", "dir::src/external/tt26-demo-4tile/src/music_player_wrapper.sv", "dir::src/external/tt26-demo-4tile/src/buffered_pl_tracer.sv", "dir::src/external/tt26-demo-4tile/src/view_calc_pl.sv", "dir::src/external/tt26-demo-4tile/src/raster_scan.sv", "dir::src/external/tt26-demo-4tile/src/music_player.sv", "dir::src/external/tt26-demo-4tile/src/matrix_calc_pl.sv", "dir::src/external/tt26-demo-4tile/src/synth_test.sv", "dir::src/external/tt26-demo-4tile/src/interval_buffer2.sv", "dir::src/external/tt26-demo-4tile/src/subdiv_pl_tracer.sv", "dir::src/external/tt26-demo-4tile/src/memories.sv", "dir::src/external/tt26-demo-4tile/src/subdivider_pl.sv", "dir::src/external/tt26-demo-4tile/src/trace_state_rs.sv", "dir::src/external/tt26-demo-4tile/src/subdet.sv", "dir::src/external/tt26-demo-4tile/src/jumper.sv", "dir::src/external/tt26-demo-4tile/src/room_navigator.sv", "dir::src/external/tt26-demo-4tile/src/trace_state.sv", "dir::src/external/tt26-demo-4tile/src/scene1.sv", "dir::src/external/tt08-vga-drop/src/project.v",
+"dir::src/external/ttsky25b-analog-vga-dacs/verilog/rtl/controller.v", "dir::src/external/ttsky25b-analog-vga-dacs/verilog/rtl/vga_sync.v"]
+CLOCK_PERIOD: 19.8
+DIE_AREA: [0, 0, 1000, 1050]
+DESIGN_REPAIR_TIE_FANOUT: true
+DIODE_ON_PORTS: both
+RUN_MAGIC_DRC: true
+SYNTH_STRATEGY: DELAY 4
+GRT_ALLOW_CONGESTION: true
+PL_RESIZER_SETUP_SLACK_MARGIN: 0.05
+GRT_RESIZER_SETUP_SLACK_MARGIN: 0.05
+GRT_RESIZER_HOLD_SLACK_MARGIN: 0.05
+PL_RESIZER_HOLD_SLACK_MARGIN: 0.05
+PL_RESIZER_HOLD_MAX_BUFFER_PCT: 100
+GRT_ANTENNA_MARGIN: 30
+GRT_ANTENNA_ITERS: 10
+DRT_ANTENNA_REPAIR_ITERS: 5
+RUN_CTS: true
+CLOCK_PORT: clk_i
+CLOCK_NET: clk_i
+PNR_SDC_FILE: dir::base.sdc
+SIGNOFF_SDC_FILE: dir::base.sdc
+VDD_NETS: ["VDD"]
+GND_NETS: ["VSS"]
+VERILOG_POWER_DEFINE: "USE_POWER_PINS"
+RT_MAX_LAYER: Metal4
+FP_PIN_ORDER_CFG: dir::pin_order.cfg
+FP_PDN_MULTILAYER: false
+FP_SIZING: absolute
+IO_PIN_H_LAYER: Metal3
+IO_PIN_V_LAYER: Metal4
+GRT_OVERFLOW_ITERS: 10
+
+KLAYOUT_DRC_THREADS: 1
+KLAYOUT_DRC_OPTIONS:
+  workers: max
+  decks: "all,-antenna,-density"
+
+KLAYOUT_ANTENNA_OPTIONS:
+  workers: max
+  decks: "antenna"
+
+STD_CELL_LIBRARY: "gf180mcu_as_sc_mcu7t3v3"
+
+KLAYOUT_RENDER_RESOLUTION: 8192
+KLAYOUT_RENDER_OVERSAMPLING: 3
+KLAYOUT_PROPERTIES: dir::../../librelane/gf180mcu_render.lyp

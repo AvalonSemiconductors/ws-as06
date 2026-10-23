@@ -1,0 +1,75 @@
+diff --git a/src/memories.sv b/src/memories.sv
+index d4caba6..d07a024 100644
+--- a/src/memories.sv
++++ b/src/memories.sv
+@@ -235,7 +235,6 @@ module p_latch_register #(parameter BITS=8, NEXT_WDATA_EN=0) (
+ 		input wire [BITS-1:0] next_wdata, // used when not USE_LATCHES, if NEXT_WDATA_EN=1
+ 		output wire [BITS-1:0] rdata
+ 	);
+-	genvar i;
+ 
+ `ifdef USE_LATCHES
+ 	reg last_reset;
+diff --git a/src/project_pl.v b/src/project_pl.v
+index 42dce4b..c540279 100644
+--- a/src/project_pl.v
++++ b/src/project_pl.v
+@@ -19,7 +19,8 @@ module tt_um_toivoh_demo_4tile #(
+ 		output wire [7:0] uio_oe,   // IOs: Enable path (active high: 0=input, 1=output)
+ 		input  wire       ena,      // always 1 when the design is powered, so you can ignore it
+ 		input  wire       clk,      // clock
+-		input  wire       rst_n     // reset_n - low to reset
++		input  wire       rst_n,     // reset_n - low to reset
++		output [11:0] sound
+ 	);
+ 
+ 	localparam COLOR_CHANNEL_BITS=2;
+@@ -58,8 +59,10 @@ module tt_um_toivoh_demo_4tile #(
+ `ifdef USE_MUSIC
+ 	//assign uio_out = sound_sample[13 -: 8];
+ 	assign uio_out = {pwm_out, 7'b0};
++	assign sound = sound_sample[15:4];
+ `else
+ 	assign uio_out = '0;
++	assign sound = '0;
+ `endif
+ 
+ 	assign uio_oe = 1 << 7;
+diff --git a/src/trace_state_rs.sv b/src/trace_state_rs.sv
+index e5418bb..d054e9c 100644
+--- a/src/trace_state_rs.sv
++++ b/src/trace_state_rs.sv
+@@ -10,15 +10,32 @@ module carry_save_adder #( BITS=8 ) (
+ 		output wire [BITS-1:0] s, c
+ 	);
+ 
++	wire [BITS-1:0] temp;
+ 	genvar i;
+ 	generate
+ 		for (i = 0; i < BITS; i++) begin
+ `ifdef PURE_RTL
+ 			assign {c[i], s[i]} = x[i] + y[i] + z[i];
+ `else
+-			sky130_fd_sc_hd__fa_1 full_adder(
++			/*sky130_fd_sc_hd__fa_1 full_adder(
+ 				.A(x[i]), .B(y[i]), .CIN(z[i]),
+ 				.COUT(c[i]), .SUM(s[i])
++			);*/
++			gf180mcu_as_sc_mcu7t3v3__maj3_2 full_adder_carry(
++				.A(x[i]),
++				.B(y[i]),
++				.C(z[i]),
++				.Y(c[i])
++			);
++			gf180mcu_as_sc_mcu7t3v3__xor2_2 full_adder_sum1(
++				.A(x[i]),
++				.B(y[i]),
++				.Y(temp[i])
++			);
++			gf180mcu_as_sc_mcu7t3v3__xor2_2 full_adder_sum2(
++				.A(z[i]),
++				.B(temp[i]),
++				.Y(s[i])
+ 			);
+ `endif
+ 		end

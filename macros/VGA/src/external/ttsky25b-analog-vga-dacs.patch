@@ -1,0 +1,85 @@
+diff --git a/verilog/rtl/controller.v b/verilog/rtl/controller.v
+index 71456cb..be4ea94 100644
+--- a/verilog/rtl/controller.v
++++ b/verilog/rtl/controller.v
+@@ -22,12 +22,13 @@ module controller(
+ 
+   // Optional offset that some modes can apply to the line rendering logic:
+   reg [7:0] voffset;
++  wire [9:0] h, v;
+   wire [9:0] vv = v + {2'b00,voffset};
+ 
+   // assign {r7,r6, g7,g6, b7,b6} = {r[7:6], g[7:6], b[7:6]};
+   // assign {rn, gn, bn} = ~{r, g, b}; // Inverted outputs for current steering DACs.
+ 
+-  wire [9:0] h, v;
++  
+   wire hmax, vmax, visible; // Used to detect end of frame.
+ 
+   // UNregistered versions of internal R/G/B outputs:
+@@ -42,6 +43,16 @@ module controller(
+ 
+   wire reset = ~rst_n;
+ 
++  // Select mode and other parameters at reset:
++  reg [7:0] mode_params;
++  wire vga_timing_mode  = mode_params[7];
++  wire [2:0] mode       = mode_params[6:4];
++  always @(posedge clk) begin
++    if (reset) begin
++      mode_params <= ui_in; //SMELL: in future, make inputs for all but mode 0 unregistered (i.e. they can change while running)
++    end
++  end
++  
+   // VGA sync generator:
+   vga_sync vga_sync(
+     .clk      (clk),
+@@ -64,16 +75,6 @@ module controller(
+   //   reset <= ~rst_n;
+   // end
+ 
+-  // Select mode and other parameters at reset:
+-  reg [7:0] mode_params;
+-  wire vga_timing_mode  = mode_params[7];
+-  wire [2:0] mode       = mode_params[6:4];
+-  always @(posedge clk) begin
+-    if (reset) begin
+-      mode_params <= ui_in; //SMELL: in future, make inputs for all but mode 0 unregistered (i.e. they can change while running)
+-    end
+-  end
+-
+   // Activating 'Registered' output is done differently based on mode:
+   // MODE_RRAMP and MODE_RBARS are ALWAYS registered...
+   wire implicit_reg_mode = (mode == MODE_RRAMP) || (mode == MODE_RBARS);
+@@ -134,10 +135,12 @@ module controller(
+   // Direct outputs to DACs (with blanking):
+   wire ungated_mode0 = (mode == MODE_PASS && !gate);
+   wire enable_out = visible || ungated_mode0; //NOTE: mode 0 (PASS) can optionally disable gating.
+-  assign {ur,ug,ub} = enable_out ? {tr,tg,tb} : 0;
+-
+   // Intermediate video values (before blanking, etc):
+   wire [7:0] tr, tg, tb;
++  assign {ur,ug,ub} = enable_out ? {tr,tg,tb} : 0;
++
++  
++  
+ 
+   // Registered copies of internal R/G/B outputs:
+   always @(posedge clk) begin
+@@ -163,6 +166,8 @@ module controller(
+ 
+   wire [23:0] bars_pattern = ( mode_ramp_base ^ ( v<256 ? {24{ramphdiv[0]}} : {24{h[0]}} ) );
+ 
++  wire [23:0] x1rgb, x2rgb, x3rgb;
++  
+   // For now, just worry about unregistered outputs:
+   assign {tr,tg,tb} =
+     // In ungated mode 0, we pass inputs to outputs no matter what:
+@@ -179,7 +184,6 @@ module controller(
+     (mode == MODE_XOR3) ? x3rgb :
+     /* MODE_RBARS */      bars_pattern; // Same as MODE_BARS, but registered.
+ 
+-  wire [23:0] x1rgb, x2rgb, x3rgb;
+   mode_xor1 xor1(h, vv, t, x1rgb);
+   mode_xor2 xor2(h, vv, t, x2rgb);
+   mode_xor3 xor3(h, vv, t, x3rgb);
