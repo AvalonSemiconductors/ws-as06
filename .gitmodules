@@ -1,0 +1,15 @@
+[submodule "macros/VGA/src/external/tt08-vga-drop"]
+	path = macros/VGA/src/external/tt08-vga-drop
+	url = https://github.com/rejunity/tt08-vga-drop
+[submodule "macros/VGA/src/external/tt26-demo-4tile"]
+	path = macros/VGA/src/external/tt26-demo-4tile
+	url = https://github.com/toivoh/tt26-demo-4tile
+[submodule "macros/VGA/src/external/ttsky25b-analog-vga-dacs"]
+	path = macros/VGA/src/external/ttsky25b-analog-vga-dacs
+	url = https://github.com/algofoogle/ttsky25b-analog-vga-dacs
+[submodule "macros/VGA/src/external/tt-waferspace-vga-screensaver"]
+	path = macros/VGA/src/external/tt-waferspace-vga-screensaver
+	url = https://github.com/TinyTapeout/tt-waferspace-vga-screensaver
+[submodule "macros/USB/src/external/tt-usbcdc-device"]
+	path = macros/USB/src/external/tt-usbcdc-device
+	url = https://github.com/urish/tt-usbcdc-device
