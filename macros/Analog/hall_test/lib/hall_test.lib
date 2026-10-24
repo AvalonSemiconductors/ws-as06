@@ -1,0 +1,63 @@
+library (hall_test) {
+	input_threshold_pct_fall: 50.0;
+	input_threshold_pct_rise: 50.0;
+	output_threshold_pct_fall: 50.0;
+	output_threshold_pct_rise: 50.0;
+	slew_lower_threshold_pct_fall: 20.0;
+	slew_lower_threshold_pct_rise: 20.0;
+	slew_upper_threshold_pct_fall: 80.0;
+	slew_upper_threshold_pct_rise: 80.0;
+	nom_process: 1.0;
+	nom_temperature: 25.0;
+	nom_voltage: 3.3;
+
+	cell (hall_test) {
+		dont_touch : true;
+		dont_use   : true;
+		area       : 58149.000000 ;
+		pin ("GUARD") {
+			direction     : "inout";
+			capacitance   : 0;
+		}
+		pin ("SEL_X12") {
+			direction     : "input";
+			capacitance   : 0;
+		}
+		pin ("SEL_X12P") {
+			direction     : "input";
+			capacitance   : 0;
+		}
+		pin ("X12P_SH") {
+			direction     : "inout";
+			capacitance   : 0;
+		}
+		pin ("SEL_X30") {
+			direction     : "input";
+			capacitance   : 0;
+		}
+		pin ("SEL_SQ30") {
+			direction     : "input";
+			capacitance   : 0;
+		}
+		pin ("SEL_OC12") {
+			direction     : "input";
+			capacitance   : 0;
+		}
+		pin ("T1") {
+			direction     : "inout";
+			capacitance   : 0;
+		}
+		pin ("T2") {
+			direction     : "inout";
+			capacitance   : 0;
+		}
+		pin ("T3") {
+			direction     : "inout";
+			capacitance   : 0;
+		}
+		pin ("T4") {
+			direction     : "inout";
+			capacitance   : 0;
+		}
+	}
+}
